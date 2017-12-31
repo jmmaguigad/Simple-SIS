@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2017 at 09:28 PM
+-- Generation Time: Dec 31, 2017 at 08:39 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tblaccessinfo` (
   `record_num` int(11) NOT NULL,
-  `accessor_id` int(11) NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -39,35 +38,37 @@ CREATE TABLE `tblaccessinfo` (
 -- Dumping data for table `tblaccessinfo`
 --
 
-INSERT INTO `tblaccessinfo` (`record_num`, `accessor_id`, `username`, `password`) VALUES
-(1, 0, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
-(2, 0, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
-(3, 0, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
-(4, 0, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
-(5, 0, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
-(6, 0, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
-(7, 0, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
-(8, 0, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
-(9, 0, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
-(10, 0, 'test', '098f6bcd4621d373cade4e832627b4f6'),
-(11, 0, 'pepe', '926e27eecdbc7a18858b3798ba99bddd'),
-(24, 0, 'a', 'a'),
-(26, 0, 'jmmaguigad', 'a08fc7e231cd241e885b24ea068ef509'),
-(27, 0, 'jmmaguigad', 'a08fc7e231cd241e885b24ea068ef509'),
-(28, 0, 'jmmaguigad', '7815696ecbf1c96e6894b779456d330e'),
-(29, 0, 'jmmaguigads', '7815696ecbf1c96e6894b779456d330e'),
-(30, 0, 'jmmaguigad', '7815696ecbf1c96e6894b779456d330e'),
-(31, 0, 'juanmarquez123', 'e99a18c428cb38d5f260853678922e03'),
-(32, 0, 'juanmarquez123', 'e99a18c428cb38d5f260853678922e03'),
-(33, 0, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
-(34, 0, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
-(35, 0, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
-(36, 0, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
-(37, 0, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
-(38, 0, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
-(39, 0, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
-(40, 0, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
-(41, 0, 'tesgin123', 'e99a18c428cb38d5f260853678922e03');
+INSERT INTO `tblaccessinfo` (`record_num`, `username`, `password`) VALUES
+(1, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
+(2, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
+(3, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
+(4, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
+(5, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
+(6, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
+(7, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
+(8, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
+(9, 'pepito123', 'e99a18c428cb38d5f260853678922e03'),
+(10, 'test', '098f6bcd4621d373cade4e832627b4f6'),
+(11, 'pepe', '926e27eecdbc7a18858b3798ba99bddd'),
+(24, 'a', 'a'),
+(26, 'jmmaguigad', 'a08fc7e231cd241e885b24ea068ef509'),
+(27, 'jmmaguigad', 'a08fc7e231cd241e885b24ea068ef509'),
+(28, 'jmmaguigad', '7815696ecbf1c96e6894b779456d330e'),
+(29, 'jmmaguigads', '7815696ecbf1c96e6894b779456d330e'),
+(30, 'jmmaguigad', '7815696ecbf1c96e6894b779456d330e'),
+(31, 'juanmarquez123', 'e99a18c428cb38d5f260853678922e03'),
+(32, 'juanmarquez123', 'e99a18c428cb38d5f260853678922e03'),
+(33, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
+(34, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
+(35, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
+(36, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
+(37, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
+(38, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
+(39, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
+(40, 'jmmaguigz', 'e99a18c428cb38d5f260853678922e03'),
+(41, 'tesgin123', 'e99a18c428cb38d5f260853678922e03'),
+(42, 'majojoma', '3fc0a7acf087f549ac2b266baf94b8b1'),
+(43, 'jamesreid', 'e99a18c428cb38d5f260853678922e03');
 
 -- --------------------------------------------------------
 
@@ -170,7 +171,8 @@ CREATE TABLE `tblstaff` (
 --
 
 INSERT INTO `tblstaff` (`record_num_staff`, `staff_firstname`, `staff_middlename`, `staff_lastname`, `staff_extname`, `access_id`) VALUES
-(2, 'Juan ', 'Dela', 'asd', '', 41);
+(2, 'Juan ', 'Dela', 'asd', '', 41),
+(3, 'Juan', 'Majo', 'Joma', 'Jr', 42);
 
 -- --------------------------------------------------------
 
@@ -205,7 +207,8 @@ CREATE TABLE `tblstudentinfo` (
 --
 
 INSERT INTO `tblstudentinfo` (`record_num_stud`, `student_id`, `stud_firstname`, `stud_middlename`, `stud_lastname`, `stud_extname`, `access_id`, `mobile_no`, `course`, `father_name`, `mother_name`, `country`, `province`, `city`, `address`, `sex`, `date_of_birth`, `email`, `stud_image`) VALUES
-(1, 'JMs', 'JMs', 'Macatuggals', 'Maguigads', '', 40, '09752276378', '', 'Abraham Maguigad', 'Rosela Maguigad', 'Philippines', 'Cagayan', 'Tuguegarao City', 'Bagay Provincial Road', 'Male', '1992-08-19', 'ljmmaguigad28@gmail.com', 'e-naku-pasusuan-kulitan-660x360.jpg');
+(1, '01-098239', 'John', 'Mat', 'Daemon', '', 40, '09752276378', '', 'Abraham Maguigad', 'Rosela Maguigad', 'Philippines', 'Cagayan', 'Tuguegarao City', 'Bagay Provincial Road', 'Male', '1992-08-19', 'ljmmaguigad28@gmail.com', 'e-naku-pasusuan-kulitan-660x360.jpg'),
+(2, '01-123546', 'James', 'Reid', 'Deer', '', 43, '098237845900', 'BSNS', 'James Reid', 'Celine Reid', 'Philippines', 'Davao', 'Davao', 'Davao', 'Male', '1992-12-04', 'james@gmail.com', '34f7ef4f037cc1818f64617d0eb8c340.png');
 
 -- --------------------------------------------------------
 
@@ -288,7 +291,7 @@ ALTER TABLE `tblsubject`
 -- AUTO_INCREMENT for table `tblaccessinfo`
 --
 ALTER TABLE `tblaccessinfo`
-  MODIFY `record_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `record_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `tbladmin`
 --
@@ -313,17 +316,17 @@ ALTER TABLE `tbldepartment`
 -- AUTO_INCREMENT for table `tblfaculty`
 --
 ALTER TABLE `tblfaculty`
-  MODIFY `record_num_fac` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `record_num_fac` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tblstaff`
 --
 ALTER TABLE `tblstaff`
-  MODIFY `record_num_staff` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `record_num_staff` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tblstudentinfo`
 --
 ALTER TABLE `tblstudentinfo`
-  MODIFY `record_num_stud` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `record_num_stud` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tblsubject`
 --

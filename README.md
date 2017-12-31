@@ -23,3 +23,6 @@ foreach ($database->selectData($table1,$table2,$linkage,$where,$isjoin,$jointype
 ** To Login
 * Student ID default value is blank
 $database->login($type,$username,$password,$studentid='');
+
+Default Login:
+Admin => Username: admin, Password: abc123
