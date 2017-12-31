@@ -1,8 +1,13 @@
-<?php $database = $GLOBALS['database']; ?>
+<?php 
+  $database = $GLOBALS['database']; 
+  $user_type = $_SESSION['user_type'];
+?>
 <ul class="nav nav-tabs">
   <li class="active"><a href="#student" data-toggle="tab" aria-expanded="true">Students</a></li>
   <li class=""><a href="#faculty" data-toggle="tab" aria-expanded="false">Faculty</a></li>
+  <?php if ($user_type == 'admin') { ?>
   <li class=""><a href="#staff" data-toggle="tab" aria-expanded="false">Staff</a></li>
+  <?php } ?>
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active in" id="student">
@@ -67,6 +72,7 @@
       </tbody>
     </table> 
   </div>
+  <?php if ($user_type == 'admin') { ?>
   <div class="tab-pane fade" id="staff">
     <table class="table table-striped table-hover ">
       <thead>
@@ -97,4 +103,5 @@
       </tbody>
     </table>   
   </div>
+  <?php } ?>
 </div>

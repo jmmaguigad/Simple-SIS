@@ -1,3 +1,10 @@
+<?php
+  if (isset($_GET['error'])) {
+    if ($_GET['error'] == 'login') {
+      echo '<div class="well">Invalid Credentials, please check your inputs.</div>';
+    }
+  }
+?>
 <form method="post" action="../inc/loginadmin.php" class="form-horizontal">
   <fieldset>
     <legend>Login Admin</legend>

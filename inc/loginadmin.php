@@ -9,5 +9,9 @@ if ($_POST){
 
 		$helper->redirect('../admin/home.php');
 
+	} else {
+
+      echo '<div class="well">Invalid Credentials, please check your inputs.<br><a href="../admin/">Go Back to Previous Page</a></div>';
+
 	}
 }

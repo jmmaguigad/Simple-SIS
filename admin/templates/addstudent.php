@@ -52,9 +52,7 @@
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Course</label>
       <div class="col-lg-10">
-        <select class="form-control" name="course">
-          <option></option>
-        </select>
+        <input type="text" class="form-control" name="course">
       </div>
     </div>
     <div class="form-group">

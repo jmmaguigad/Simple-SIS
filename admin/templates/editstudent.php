@@ -3,7 +3,13 @@ include '../inc/init.php';
 $db = $GLOBALS['database'];
 $helper = $GLOBALS['helper'];
 $id = $_GET['editstudent'];
-foreach ($database->selectData('tblstudentinfo','tblaccessinfo','tblstudentinfo.access_id = tblaccessinfo.record_num',"tblstudentinfo.record_num_stud = $id",1,'Inner') as $rowStud) {
+if ($id == "" && isset($_SESSION['user_session'])) {
+  $user_id = $_SESSION['user_session'];
+  $data = $db->selectData('tblstudentinfo','tblaccessinfo','tblstudentinfo.access_id = tblaccessinfo.record_num',"tblaccessinfo.record_num = $user_id",1,'Inner');
+} else {
+  $data = $db->selectData('tblstudentinfo','tblaccessinfo','tblstudentinfo.access_id = tblaccessinfo.record_num',"tblstudentinfo.record_num_stud = $id",1,'Inner');
+}
+foreach ($data as $rowStud) {
 ?>
 <form method="post" action="../inc/editstudent.php" enctype="multipart/form-data" class="form-horizontal">
   <fieldset>
@@ -61,9 +67,7 @@ foreach ($database->selectData('tblstudentinfo','tblaccessinfo','tblstudentinfo.
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Course</label>
       <div class="col-lg-10">
-        <select class="form-control" value="<?php echo $rowStud['course']; ?>" name="course">
-          <option></option>
-        </select>
+        <input class="form-control" value="<?php echo $rowStud['course']; ?>" name="course" type="text">
       </div>
     </div>
     <div class="form-group">
@@ -128,6 +132,11 @@ foreach ($database->selectData('tblstudentinfo','tblaccessinfo','tblstudentinfo.
       <label for="inputPassword" class="col-lg-2 control-label">Password</label>
       <div class="col-lg-10">
         <input type="password" class="form-control" name="password" placeholder="Password">
+        <div class="checkbox">
+          <label>
+            <input value="changepassword" name="changepasswordconfirm" type="checkbox"> Check to Change Password
+          </label>
+        </div>
       </div>
     </div>
     <div class="form-group">

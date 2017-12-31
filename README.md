@@ -4,18 +4,22 @@ HOW TO USE
 include_once 'inc/connection.php';
 $database = new Connection();
 
-* CRUD
+* CRUD Operation
 
 ** To Insert
-$database->insertData("tbladmin","username,password",":username, :password",array(':username' => 'admin'  , ':password' => md5('abc123')));
+$database->insertData($table1,$table2,$field1,$fields2,$values1,$values2,$params1,$params2);
 
 ** To Delete
-$database->deleteData("tbladmin","record_num",3);
+$database->deleteData($table,$field,$id);
 
 ** To Edit
-$database->editData("tbladmin","`username` = 'mojoejoe'","record_num=4");
+$database->editData($table,$fields,$where);
 
 ** To Select
-foreach ($database->selectData("tbladmin","") as $row) {
-	echo $row["record_num"].' - '.$row["username"];
+foreach ($database->selectData($table1,$table2,$linkage,$where,$isjoin,$jointype) as $row) {
+	echo $row["field"];
 }
+
+** To Login
+* Student ID default value is blank
+$database->login($type,$username,$password,$studentid='');

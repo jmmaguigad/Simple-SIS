@@ -3,7 +3,13 @@ include '../inc/init.php';
 $db = $GLOBALS['database'];
 $helper = $GLOBALS['helper'];
 $id = $_GET['editfaculty'];
-foreach ($database->selectData('tblfaculty','tblaccessinfo','tblfaculty.access_id = tblaccessinfo.record_num',"tblfaculty.record_num_fac = $id",1,'Inner') as $rowFac) {
+if ($id == "" && isset($_SESSION['user_session'])) {
+  $user_id = $_SESSION['user_session'];
+  $data = $db->selectData('tblfaculty','tblaccessinfo','tblfaculty.access_id = tblaccessinfo.record_num',"tblaccessinfo.record_num = $user_id",1,'Inner');
+} else {
+  $data = $db->selectData('tblfaculty','tblaccessinfo','tblfaculty.access_id = tblaccessinfo.record_num',"tblfaculty.record_num_fac = $id",1,'Inner');
+}
+foreach ($data as $rowFac) {
 ?>
 <form method="post" action="../inc/editfaculty.php" class="form-horizontal">
   <fieldset>

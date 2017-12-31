@@ -76,7 +76,7 @@ public function deleteData($table,$field,$id) {
     }
 }
 
-public function editData($table,$fields,$where){
+public function editData($table,$fields,$where) {
   try 
 
     {
@@ -91,7 +91,7 @@ public function editData($table,$fields,$where){
     }
 }
 
-public function selectData($table1,$table2,$linkage,$where,$isjoin,$jointype){
+public function selectData($table1,$table2,$linkage,$where,$isjoin,$jointype) {
   try 
 
     {
@@ -104,6 +104,7 @@ public function selectData($table1,$table2,$linkage,$where,$isjoin,$jointype){
           if ($where !== "") {
             $joinSql = $joinSql . " WHERE ". $where;
           }
+          // echo $joinSql;
         }
 
           return $db->query($joinSql);                
@@ -122,7 +123,7 @@ public function selectData($table1,$table2,$linkage,$where,$isjoin,$jointype){
     }
 }
 
-public function login($type,$username,$password){
+public function login($type,$username,$password,$studentid=''){
   try 
 
     {
@@ -131,23 +132,37 @@ public function login($type,$username,$password){
         
         $stmt = $db->prepare("SELECT * FROM tbladmin WHERE username=:uname OR password=:upass LIMIT 1"); 
 
-      } else if ($type !== 'admin') {
+      } else if ($type == 'student') {
 
-        $stmt = $db->prepare("SELECT * FROM tblaccessinfo WHERE username=:uname OR password=:upass LIMIT 1");  
+        $stmt = $db->prepare("SELECT * FROM tblstudentinfo INNER JOIN tblaccessinfo ON tblstudentinfo.access_id = tblaccessinfo.record_num WHERE (tblaccessinfo.username=:uname OR tblstudentinfo.student_id=:studentid) AND tblaccessinfo.password=:upass LIMIT 1"); 
+        
+      } else if ($type == 'staff') {
+
+        $stmt = $db->prepare("SELECT * FROM tblstaff INNER JOIN tblaccessinfo ON tblstaff.access_id = tblaccessinfo.record_num WHERE tblaccessinfo.username=:uname AND tblaccessinfo.password=:upass LIMIT 1"); 
+        
+      } else if ($type == 'faculty') {
+
+        $stmt = $db->prepare("SELECT * FROM tblfaculty INNER JOIN tblaccessinfo ON tblfaculty.access_id = tblaccessinfo.record_num WHERE tblaccessinfo.username=:uname AND tblaccessinfo.password=:upass LIMIT 1"); 
 
       }
 
-      $stmt->execute(array(':uname'=>$username, ':upass'=>$password));
+      if ($type == 'staff' || $type == 'faculty' || $type == 'admin') {
+        $stmt->execute(array(':uname'=>$username, ':upass'=>$password));        
+      } else {
+        $stmt->execute(array(':uname'=>$username, ':upass'=>$password, ':studentid'=>$studentid));        
+      }
+
       $accessRow = $stmt->fetch(PDO::FETCH_ASSOC);
       if ($stmt->rowCount() > 0){
         if ($accessRow['password'] == $password) {
+          $_SESSION['user_type'] = $type;
           $_SESSION['user_session'] = $accessRow['record_num'];
           $_SESSION['user_name'] = $accessRow['username'];
           return true;
-        } else {
-          return false;
         }
-      }
+      } else {
+        return false;
+      } 
     } 
 
   catch (Exception $e) 
