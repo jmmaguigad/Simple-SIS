@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2017 at 08:39 AM
+-- Generation Time: Jan 02, 2018 at 03:52 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -51,21 +51,21 @@ INSERT INTO `tblaccessinfo` (`record_num`, `username`, `password`) VALUES
 (10, 'test', '098f6bcd4621d373cade4e832627b4f6'),
 (11, 'pepe', '926e27eecdbc7a18858b3798ba99bddd'),
 (24, 'a', 'a'),
-(26, 'jmmaguigad', 'a08fc7e231cd241e885b24ea068ef509'),
-(27, 'jmmaguigad', 'a08fc7e231cd241e885b24ea068ef509'),
-(28, 'jmmaguigad', '7815696ecbf1c96e6894b779456d330e'),
-(29, 'jmmaguigads', '7815696ecbf1c96e6894b779456d330e'),
-(30, 'jmmaguigad', '7815696ecbf1c96e6894b779456d330e'),
+(26, 'jomal123456789', 'a08fc7e231cd241e885b24ea068ef509'),
+(27, 'jomal12345678', 'a08fc7e231cd241e885b24ea068ef509'),
+(28, 'jomal1234567', '7815696ecbf1c96e6894b779456d330e'),
+(29, 'jomal123456', '7815696ecbf1c96e6894b779456d330e'),
+(30, 'jomal12345', '7815696ecbf1c96e6894b779456d330e'),
 (31, 'juanmarquez123', 'e99a18c428cb38d5f260853678922e03'),
 (32, 'juanmarquez123', 'e99a18c428cb38d5f260853678922e03'),
 (33, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
 (34, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
 (35, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
 (36, 'staff123', 'e99a18c428cb38d5f260853678922e03'),
-(37, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
-(38, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
-(39, 'jmmaguigz', 'e3c2e69177c14cd6dc28120c232eda50'),
-(40, 'jmmaguigz', 'e99a18c428cb38d5f260853678922e03'),
+(37, 'jomalgz', 'e3c2e69177c14cd6dc28120c232eda50'),
+(38, 'jomalgzz', 'e3c2e69177c14cd6dc28120c232eda50'),
+(39, 'jomalgzzz', 'e3c2e69177c14cd6dc28120c232eda50'),
+(40, 'jomalgzzzz', 'e99a18c428cb38d5f260853678922e03'),
 (41, 'tesgin123', 'e99a18c428cb38d5f260853678922e03'),
 (42, 'majojoma', '3fc0a7acf087f549ac2b266baf94b8b1'),
 (43, 'jamesreid', 'e99a18c428cb38d5f260853678922e03');
@@ -207,7 +207,7 @@ CREATE TABLE `tblstudentinfo` (
 --
 
 INSERT INTO `tblstudentinfo` (`record_num_stud`, `student_id`, `stud_firstname`, `stud_middlename`, `stud_lastname`, `stud_extname`, `access_id`, `mobile_no`, `course`, `father_name`, `mother_name`, `country`, `province`, `city`, `address`, `sex`, `date_of_birth`, `email`, `stud_image`) VALUES
-(1, '01-098239', 'John', 'Mat', 'Daemon', '', 40, '09752276378', '', 'Abraham Maguigad', 'Rosela Maguigad', 'Philippines', 'Cagayan', 'Tuguegarao City', 'Bagay Provincial Road', 'Male', '1992-08-19', 'ljmmaguigad28@gmail.com', 'e-naku-pasusuan-kulitan-660x360.jpg'),
+(1, '01-098239', 'John', 'Mat', 'Daemon', '', 40, '09752276378', '', 'Abraham Daemon', 'Shell Daemon', 'Philippines', 'Cagayan', 'Tuguegarao City', 'Provincial Road', 'Male', '1992-08-19', 'daemon@gmail.com', 'e-naku-pasusuan-kulitan-660x360.jpg'),
 (2, '01-123546', 'James', 'Reid', 'Deer', '', 43, '098237845900', 'BSNS', 'James Reid', 'Celine Reid', 'Philippines', 'Davao', 'Davao', 'Davao', 'Male', '1992-12-04', 'james@gmail.com', '34f7ef4f037cc1818f64617d0eb8c340.png');
 
 -- --------------------------------------------------------
